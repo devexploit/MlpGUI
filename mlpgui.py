@@ -180,7 +180,7 @@ class Pencere(QtWidgets.QWidget):
 
     def selectionchange(self,value):
 
-        if value+1 == self.regresyon.columns():
+        if value+1 == self.summ:
             self.ciktison_text.setVisible(False)
             self.ciktison.setVisible(False)
         else:
@@ -245,7 +245,7 @@ class Pencere(QtWidgets.QWidget):
 
     def dosyaAc(self):
         self.dosyaismi = QtWidgets.QFileDialog.getOpenFileName(self, "Dosya Ac", os.getenv("HOME"))                 #file upload
-        print(self.dosyaismi)
+        #print(self.dosyaismi)
         self.dosyayolu.setText(self.dosyaismi[0])
 
         self.file = self.regresyon.dataOku(self.dosyaismi[0])
